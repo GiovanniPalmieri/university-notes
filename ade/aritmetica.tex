@@ -1,0 +1,33 @@
+\section{Aritmetica dei calcolatori}
+
+\subsection{Somma e Sottrazione}
+Per eseguire l'addizione di due numeri in complemento 
+a due dobbiamo eseguire l'addizione bit a bit considerando il riporto.
+Mentre per eseguire la sottrazione dobbiamo prima eseguire il complemetno 
+a due del secondo membro e poi eseguire la somma.
+\paragraph{Overflow}
+L'overflow può avvenire quando si esegue la somma di due 
+numeri con lo stesso segno oppure quando di esegue la sottrazione di 
+numeri con segno opposto.Per identificare l'overflow dobbiamo vedere il 
+bit del segno, dato che se i bit del valore non bastano a rappresentare il numero
+allora il bit del segno verrà impostato a 1 nel caso di positivi e 0 nel caso di negativi.
+
+\paragraph{Overlflow negli unsigned}
+Nei valori unsigned per verificare l'overflow nella somma,
+dobbiamo controllare che il risultato sia maggiore dei due
+operandi, in caso contrario c'è stato un overflow.
+Mentre nella sottrazione dobbiamo verificare che il 
+risultato sia minore del minuendo.In caso contrario c'è stato un overflow.
+\subsection{Moltiplicazione}
+
+L'hardware per la moltiplicazione è molto simile al modo in cui si esegue la moltiplicazione su carta.
+
+%todo fix
+\begin{figure}[H]
+    \includegraphics[width=\linewidth]{pictures/schemaMoltiplicazione.png}
+    \caption{A boat.}
+    \label{fig:boat1}
+  \end{figure}
+
+
+\subsection{Divisione}
