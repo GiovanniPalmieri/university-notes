@@ -22,12 +22,35 @@ risultato sia minore del minuendo.In caso contrario c'è stato un overflow.
 
 L'hardware per la moltiplicazione è molto simile al modo in cui si esegue la moltiplicazione su carta.
 
-%todo fix
 \begin{figure}[H]
-    \includegraphics[width=\linewidth]{pictures/schemaMoltiplicazione.png}
-    \caption{A boat.}
-    \label{fig:boat1}
-  \end{figure}
+    \centering
+    \includegraphics[width=100mm,scale=1.5]{pictures/schemaMoltiplicazione.png}
+    \caption{HW moltiplicazione}
+    \label{fig:hw-multiplication}
+\end{figure}
+\newpage
+Il control test esegue per 64 volte il seguente algoritmo:
+\begin{enumerate}
+    \item Controlla che il bit meno valente del moltiplicatore:
+    \begin{enumerate}
+        \item Se il bit è a 1, allora somma il moltiplicando al prodotto.
+        \item Se il bit è a 0, non fa nulla.
+    \end{enumerate}
+    \item Esegue lo shift left del moltiplicando e lo shift right del moltiplicatore.
+\end{enumerate}
+\subsubsection{Moltiplicazione più veloce}
+Questo hardware può essere rifinito per essere più veloce ed economico.
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=100mm,scale=1.5]{pictures/schemaMoltiplicazioneVeloce.png}
+    \caption{HW moltiplicazione veloce}
+    \label{fig:hw-multiplication}
+\end{figure}
+
+L'aumento di velocità deriva dall'esecuzione in parallelo, in questo caso lo shift di moltiplicando e moltiplicatore vengono eseguiti 
+mentre il moltiplicando viene sommato al prodotto. L'HW deve assicurarsi di testare il giusto bit del moltiplicatore e di 
+prendere la versione shiftata del moltiplicando. È più economico perchè non ci serve più una ALU a 128 bits e risparmiamo un 
+registro da 128 bits. 
 
 \subsection{Divisione}
